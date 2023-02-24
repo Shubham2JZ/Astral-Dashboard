@@ -1,0 +1,94 @@
+/* * {
+  border: 0px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+select {
+  appearance: none;
+  outline: none;
+}
+
+optgroup {
+  margin: 0px;
+  padding: 0px;
+  font-size: 10px;
+  border: 2px solid;
+} */
+
+* {
+  font-family: poppins;
+}
+
+.selected-option {
+  font-family: poppins;
+  font-weight: 600;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.filter-dropdown .arrow {
+  display: inline-block;
+  padding: 3px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.filter-dropdown .arrow.open {
+  transform: rotate(180deg);
+}
+
+.options {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 3px 5px 0.2px rgb(0, 0, 0, 0.2);
+  z-index: 999;
+  font-family: poppins;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: left;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 200ms;
+  animation: fadeIn 0.2s linear 1;
+}
+
+/* .fade-in {
+  animation: fadeIn 0.2s linear 1;
+} */
+.fade-out {
+  animation: fadeOut 0.2s linear 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.options > div {
+  transition: all 400ms;
+  padding: 15px;
+}
+
+.options > div:hover {
+  background: rgb(87, 140, 228);
+  background: linear-gradient(
+    90deg,
+    rgba(87, 140, 228, 0.6026785714285714) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}

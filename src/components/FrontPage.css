@@ -1,0 +1,86 @@
+.login {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-image-container {
+  width: 55%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.login,
+.bg-image-container {
+  float: left;
+  height: 100vh;
+}
+
+.bg-image {
+  background-image: url("../public/photos/aaa.jpg");
+  background-size: cover;
+  width: 98%;
+  height: 95%;
+  border-radius: 50px 0px;
+}
+
+.login-form {
+  width: 60%;
+  height: 20vw;
+  font-family: poppins, sans-serif;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form > div,
+span,
+input,
+button {
+  flex: 1;
+  width: 100%;
+}
+
+.signin-text {
+  text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
+  font-size: 230%;
+  font-weight: 600;
+}
+.new-to-astral {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.blue-text {
+  color: #004b97;
+  cursor: pointer;
+}
+
+::placeholder {
+  opacity: 1;
+}
+
+.input {
+  width: 95%;
+  border: 0px;
+  border-bottom: 4px solid #004b97;
+  border-radius: 12px;
+  font-size: 20px;
+  padding-left: 20px;
+  margin: 1% 0px;
+  color: #004b97;
+}
+
+.input:focus {
+  outline: 0px;
+}
+
+.submit-button {
+  border-radius: 12px;
+  border: 0px;
+  background-color: #004b97;
+  font-family: 500;
+  font-size: 20px;
+  color: white;
+}
