@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, memo } from "react";
 import "./dropdown.css";
-import downIcon from "../../public/photos/dropdown-vector-down.png";
+import downIcon from "../../public/icons/down-arrow.png";
 
 const Dropdown = ({ options, width }) => {
   const dropDownRef = useRef();
@@ -40,13 +40,7 @@ const Dropdown = ({ options, width }) => {
         <img src={downIcon} className={`arrow ${isOpen ? "open" : ""}`} />
       </div>
       {isOpen && (
-        <div
-          className={`options ${setTimeout(
-            () => (isOpen ? "fade-out" : ""),
-            210
-          )}`}
-          style={{ width: `${width + 1}vw` }}
-        >
+        <div className={`options`} style={{ width: `${width + 1}vw` }}>
           {options.map((option, i) => (
             <div key={i} onClick={() => handleOptionSelect(option)}>
               <div>{option}</div>

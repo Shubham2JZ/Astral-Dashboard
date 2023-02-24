@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import "./searchBox.css";
-import searchIcon from "../../public/photos/fi-br-search.png";
+import searchIcon from "../../public/icons/search.png";
 
 const SearchBox = () => {
   const inputRef = useRef();

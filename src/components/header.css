@@ -1,0 +1,12 @@
+.logout-btn {
+  border: none;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logout-btn > * {
+  width: 80%;
+}

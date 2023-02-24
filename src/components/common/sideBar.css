@@ -1,0 +1,22 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -400px;
+  width: 400px;
+  height: 100vh;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  transition: left 0.4s ease-in-out;
+  border-radius: 0px 20px 20px 00px;
+  z-index: 999;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-close-btn {
+  position: relative;
+  left: 10%;
+  width: 10%;
+}
