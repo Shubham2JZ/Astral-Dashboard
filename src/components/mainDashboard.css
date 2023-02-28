@@ -2,33 +2,26 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  padding: 10px;
   box-sizing: border-box;
+  gap: 10px;
+  background-color: rgb(239, 243, 252);
 }
 
 .dashboard-container-child {
   /* border: 2px solid rgba(0, 0, 0, 0.1); */
-  margin: 5px;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0px 10px;
 }
 .dashboard-container-child-1 {
-  flex: 1.5;
+  flex: 2;
   justify-content: space-between;
 }
 
 .dashboard-container-child-2 {
   flex: 1.8;
   justify-content: space-between;
-}
-.dashboard-container-child-2 > div {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
 }
 
 .dark-bg {
@@ -55,19 +48,9 @@
   flex: 1;
 }
 .dashboard-container-child-4 {
-  flex: 3.5;
-  padding: 10px;
-  gap: 10px;
+  flex: 3;
 }
-.dashboard-container-child-4 > * {
-  flex: 1;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .dashboard-container-child-5 {
   flex: 15;
   display: grid;
@@ -77,7 +60,8 @@
 }
 .dashboard-container-child-5 > div {
   flex: auto;
-  border: 1px solid;
+  border: 1px solid gray;
+  border-radius: 20px;
   height: 100%;
 }
 

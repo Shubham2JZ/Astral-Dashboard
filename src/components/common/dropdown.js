@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, memo } from "react";
 import "./dropdown.css";
 import downIcon from "../../public/icons/down-arrow.png";
 
-const Dropdown = ({ options, width }) => {
+const Dropdown = ({ options, width, border = true, bold = true }) => {
   const dropDownRef = useRef();
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(options[0]);
@@ -31,16 +31,22 @@ const Dropdown = ({ options, width }) => {
 
   return (
     <div
-      className="filter-dropdown"
+      className={`filter-dropdown ${border === false ? "" : "border-shadow"}`}
       style={{ width: `${width}vw` }}
       ref={dropDownRef}
     >
-      <div className="selected-option" onClick={toggleDropdown}>
+      <div
+        className={`selected-option ${bold ? "bold" : ""}`}
+        onClick={toggleDropdown}
+      >
         {selectedOption}
         <img src={downIcon} className={`arrow ${isOpen ? "open" : ""}`} />
       </div>
       {isOpen && (
-        <div className={`options`} style={{ width: `${width + 1}vw` }}>
+        <div
+          className={`options ${bold ? "bold" : ""}`}
+          style={{ width: `${width}vw` }}
+        >
           {options.map((option, i) => (
             <div key={i} onClick={() => handleOptionSelect(option)}>
               <div>{option}</div>

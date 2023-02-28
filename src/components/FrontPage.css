@@ -1,15 +1,21 @@
+.front-page-container {
+  height: 100vh;
+}
+
 .login {
-  width: 45%;
+  width: 43%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
 }
 
 .bg-image-container {
-  width: 55%;
+  width: 57%;
   display: flex;
   justify-content: left;
   align-items: center;
+  /* background-color: red; */
 }
 
 .login,
@@ -19,8 +25,9 @@
 }
 
 .bg-image {
-  background-image: url("../public/photos/aaa.jpg");
-  background-size: cover;
+  background-image: url("../public/photos/astral-bg-image.jpg");
+  background-size: 100vw;
+  background-position: center right;
   width: 98%;
   height: 95%;
   border-radius: 50px 0px;
@@ -73,11 +80,12 @@
   outline: 0px;
 }
 
-.submit-button {
+.login-submit-button {
   border-radius: 12px;
   border: 0px;
   background-color: #004b97;
   font-family: 500;
   font-size: 20px;
   color: white;
+  cursor: pointer;
 }

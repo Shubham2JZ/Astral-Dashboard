@@ -1,33 +1,27 @@
-/* * {
-  border: 0px;
-  background-color: rgba(0, 0, 0, 0);
-}
-
-select {
-  appearance: none;
-  outline: none;
-}
-
-optgroup {
-  margin: 0px;
-  padding: 0px;
-  font-size: 10px;
-  border: 2px solid;
-} */
-
 * {
   font-family: poppins;
 }
 
 .selected-option {
   font-family: poppins;
-  font-weight: 600;
-  font-size: 1.2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.border-shadow {
+  box-shadow: 0px 2px 3px rgb(170, 181, 211);
+  border-radius: 10px;
+  background-color: white;
+  padding: 5px 10px;
 }
 
 .filter-dropdown .arrow {
@@ -41,13 +35,14 @@ optgroup {
 }
 
 .options {
+  background-color: white;
+
   position: absolute;
   background-color: white;
-  box-shadow: 0 3px 5px 0.2px rgb(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 3px rgb(170, 181, 211);
   z-index: 999;
   font-family: poppins;
-  font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-align: left;
   margin-top: 10px;
   cursor: pointer;
@@ -80,12 +75,11 @@ optgroup {
 }
 
 .options > div {
-  transition: all 400ms;
   padding: 15px;
 }
 
 .options > div:hover {
-  background: rgb(87, 140, 228);
+  transition: all 0.4s;
   background: linear-gradient(
     90deg,
     rgba(87, 140, 228, 0.6026785714285714) 0%,

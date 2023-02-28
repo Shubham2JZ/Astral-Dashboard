@@ -1,17 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
+import Sidebar from "./common/sideBar";
 import "./header.css";
-import DropDown from "./common/dropdown";
-import logOut from "../public/icons/sign-out.png";
-import astralLogo from "../public/icons/astral-logo.png";
+import sidebarIcon from "../public/icons/menu-burger.png";
+import settingsIcon from "../public/icons/settings.png";
 
-const Header = ({ topSelectOptions }) => {
+import DropDown from "./common/dropdown";
+import astralLogo from "../public/icons/astral-logo.png";
+import Logout from "./common/logout";
+
+const topSelectOptions = [
+  "Sale Performance",
+  "Manufacture",
+  "Finance",
+  "Purchase",
+];
+
+const Header = () => {
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSideBarOpen(!isSideBarOpen);
+  };
+
   return (
     <div className="dashboard-container-child dashboard-container-child-1">
-      <img src={astralLogo} />
-      <DropDown options={topSelectOptions} width={15} />
-      <button className="logout-btn">
-        <img src={logOut} alt="logOut" />
-      </button>
+      <div id="header-left-container">
+        <div className={`dark-bg ${isSideBarOpen ? "" : "hidden"}`}></div>
+        <div>
+          <button
+            className="sidebar-menu-btn cursor-pointer"
+            onClick={toggleSidebar}
+          >
+            <img src={sidebarIcon} />
+          </button>
+          <Sidebar
+            isOpen={isSideBarOpen}
+            onClose={() => setIsSideBarOpen(false)}
+          />
+        </div>
+        <img src={astralLogo} />
+      </div>
+      <DropDown options={topSelectOptions} width={15} border={false} />
+      <div id="header-right-container">
+        <img src={settingsIcon} className="cursor-pointer" />
+        <div className="profile-picture-icon cursor-pointer">Profile</div>
+        <Logout />
+      </div>
     </div>
   );
 };

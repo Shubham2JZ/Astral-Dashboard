@@ -1,0 +1,27 @@
+.all-apps-container {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../public/photos/astral-bg-image.jpg");
+  background-size: 100vw;
+  background-position: center right;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.app-container-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.apps-list {
+  flex: 22;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

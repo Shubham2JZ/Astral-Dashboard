@@ -1,3 +1,8 @@
+.dashboard-container-child-1 {
+  background-color: white;
+  box-shadow: 0px 2px 3px rgb(170, 181, 211);
+}
+
 .logout-btn {
   border: none;
   background: transparent;
@@ -7,6 +12,23 @@
   cursor: pointer;
 }
 
-.logout-btn > * {
-  width: 80%;
+.sidebar-menu-btn {
+  background-color: transparent;
+  border: none;
+}
+
+#header-left-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#header-right-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }

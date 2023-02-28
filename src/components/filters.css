@@ -1,0 +1,21 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.profile-picture-icon {
+  height: 4rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  background-color: #3d99bd;
+}
+
+.dashboard-container-child-2 > * {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
