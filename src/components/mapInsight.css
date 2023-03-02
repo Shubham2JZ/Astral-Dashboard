@@ -1,0 +1,10 @@
+.dashboard-container-child-5 > div {
+    flex: auto;
+    border-radius: 20px;
+    height: 100%;
+  }
+
+#insight-container{
+    border: 1px solid gray;
+
+  }

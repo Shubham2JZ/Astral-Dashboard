@@ -1,0 +1,26 @@
+.heading-container {
+  text-align: left;
+}
+
+h2 {
+  color: #004b97;
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.insights-container {
+  /* padding: 20px 20px 20px 0px; */
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3vh;
+}
+
+.insights-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

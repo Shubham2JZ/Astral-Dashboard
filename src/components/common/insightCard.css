@@ -1,0 +1,40 @@
+.insight-container {
+  width: 85%;
+  display: flex;
+  justify-content: left;
+  margin: 2%;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: rgb(227, 238, 252);
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3);
+  height: 4vw;
+}
+
+.button {
+  text-decoration: none;
+  transition: all 0.1s ease-in-out;
+  background-color: white;
+  width: 4vw;
+  height: 4vw;
+  border-radius: 20%;
+  cursor: pointer;
+  padding: 2%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.button > img {
+  width: 60%;
+  display: inline-block;
+  margin: 2px;
+}
+
+.text-content {
+  width: 80%;
+  text-align: left;
+  box-sizing: border-box;
+  padding-left: 5%;
+  display: flex;
+  align-items: center;
+  font-size: x-large;
+}
