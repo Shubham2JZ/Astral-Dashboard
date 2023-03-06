@@ -6,7 +6,7 @@ import { gridData } from "./testdata";
 const GridContainer = () => {
   const [data, setData] = useState(gridData);
   return (
-    <div className="dashboard-container-child dashboard-container-child-4">
+    <div className="dashboard-container-child grids-container">
       <div className="grid-list">
         {data.map((n, i) => (
           <GridBox key={i} data={n} />
@@ -14,7 +14,6 @@ const GridContainer = () => {
       </div>
       <div id="grid-tips">
         <span>
-          {" "}
           <b>GOLM = </b>Growth over Last Month
         </span>
         <span>

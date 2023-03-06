@@ -5,7 +5,8 @@
 .selected-option {
   font-family: poppins;
   display: flex;
-  justify-content: space-between;
+  font-size: 0.8rem;
+  justify-content: space-around;
   align-items: center;
   gap: 10px;
   cursor: pointer;
@@ -14,7 +15,7 @@
 
 .bold {
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 1.2rem !important;
 }
 
 .border-shadow {
@@ -42,19 +43,25 @@
   box-shadow: 0px 2px 3px rgb(170, 181, 211);
   z-index: 999;
   font-family: poppins;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   text-align: left;
   margin-top: 10px;
   cursor: pointer;
-  transition: all 200ms;
+  transition: all 0.2s;
   animation: fadeIn 0.2s linear 1;
 }
 
-/* .fade-in {
-  animation: fadeIn 0.2s linear 1;
-} */
-.fade-out {
-  animation: fadeOut 0.2s linear 1;
+.options > div {
+  padding: 10px;
+}
+
+.options > div:hover {
+  transition: all 0.2s;
+  background: linear-gradient(90deg, #78bbff 0%, #fff 100%);
+}
+
+.selected {
+  border-left: 5px solid #78bbff;
 }
 
 @keyframes fadeIn {
@@ -64,25 +71,4 @@
   100% {
     opacity: 1;
   }
-}
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.options > div {
-  padding: 15px;
-}
-
-.options > div:hover {
-  transition: all 0.4s;
-  background: linear-gradient(
-    90deg,
-    rgba(87, 140, 228, 0.6026785714285714) 0%,
-    rgba(255, 255, 255, 1) 100%
-  );
 }

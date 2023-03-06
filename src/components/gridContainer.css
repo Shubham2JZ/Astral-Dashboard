@@ -1,13 +1,14 @@
-.dashboard-container-child-4 {
+.grids-container {
   flex-direction: column !important;
 }
 
 .grid-list {
   width: 100%;
   display: flex;
+  justify-content: space-around;
   flex-direction: row;
   padding: 10px;
-  gap: 10px;
+  gap: 1%;
   height: 80%;
 }
 

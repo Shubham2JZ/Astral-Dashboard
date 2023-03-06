@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
+import axios from "axios";
 import {
   getHeatMapData,
   stateProjection,
   getRandomInt150to200,
 } from "./common/utilsForMap";
-import geographyIndia from "../public/json/India.topo.json";
+import INDIA_MAP from "../public/json/India.topo.json";
 import "./map.css";
-import geographyStates from "../public/json/india-districts.json";
-import DropDown from "./common/dropdown";
+import INDIA_MAP_2 from "../public/json/india-districts.json";
 
 // Random Gujarat Data
-const a = geographyStates.objects["india-districts-2019-734"].geometries
+const a = INDIA_MAP_2.objects["india-districts-2019-734"].geometries
   .filter((n) => n.properties.st_nm === "Gujarat")
   .map((n) => n.properties.district)
   .map((n) => ({ district: n, value: getRandomInt150to200() }));
@@ -32,23 +32,11 @@ const geographyStyle = {
   },
 };
 
-const granuralityOptions = [
-  "Monthly",
-  "Quarterly",
-  "Half Yearly",
-  "Yearly",
-  "Weekly",
-];
-
 const Map = () => {
   const [data, setData] = useState(getHeatMapData());
   const [isZoomed, setIsZoomed] = useState(false);
   const [selectedState, setSelectedState] = useState("");
   const stateRef = useRef();
-
-  useEffect(() => {
-    console.log(selectedState);
-  }, [selectedState]);
 
   const projectionConfigForIndia = {
     scale: 450,
@@ -57,54 +45,71 @@ const Map = () => {
 
   const handleMapClick = async (geo) => {
     setSelectedState(geo.properties.name);
-    // setIsZoomed(true);
   };
 
   return (
     <div className="map-box">
       {isZoomed ? (
-        <IndiaMap
-          projection={stateProjection(selectedState)}
-          geography={geographyStates}
-          isStateMap={true}
-          data={data}
-          selectedState={selectedState}
-        />
+        <ComposableMap
+          projectionConfig={stateProjection(selectedState)}
+          projection="geoMercator"
+          width={300}
+          height={290}
+          viewBox={"0 0 300 290"}
+        >
+          <Geographies geography={INDIA_MAP_2}>
+            {({ geographies }) => {
+              return geographies
+                .filter((n) => n.properties.st_nm === selectedState)
+                .map((geo) => {
+                  const current = a.find(
+                    (s) => s.district === geo.properties.district
+                  );
+                  return (
+                    <Geography
+                      key={geo.rsmKey}
+                      geography={geo}
+                      stroke="#666"
+                      strokeWidth="0.5"
+                      strokeOpacity="0.2"
+                      fill="#fff"
+                      style={geographyStyle}
+                    />
+                  );
+                });
+            }}
+          </Geographies>
+        </ComposableMap>
       ) : (
-        <IndiaMap
-          projection={projectionConfigForIndia}
-          geography={geographyIndia}
-          data={data}
-          selectedState={selectedState}
-          stateRef={stateRef}
-          handleMapClick={handleMapClick}
-        />
+        <ComposableMap
+          projectionConfig={projectionConfigForIndia}
+          projection="geoMercator"
+          width={300}
+          height={290}
+          viewBox={"0 0 300 290"}
+        >
+          <Geographies geography={INDIA_MAP} className="geographies">
+            {({ geographies }) => {
+              return geographies.map((geo) => {
+                const current = data.find((s) => s.id === geo.id);
+                return (
+                  <Geography
+                    ref={stateRef}
+                    key={geo.rsmKey}
+                    geography={geo}
+                    stroke="#666"
+                    strokeWidth="0.5"
+                    strokeOpacity="0.2"
+                    fill="#fff"
+                    style={geographyStyle}
+                    onClick={() => handleMapClick(geo)}
+                  />
+                );
+              });
+            }}
+          </Geographies>
+        </ComposableMap>
       )}
-      <div className="map-state-dropdown ">
-        <span>Select State</span>
-        <DropDown options={granuralityOptions} width={10} bold={false} />
-      </div>
-      <div className="map-state-details border-shadow">
-        <div className="map-state-details-name bold">INDIA</div>
-        <div className="map-state-details-statedetails">
-          <div>
-            <span>No. of Districts</span>
-            <span>1</span>
-          </div>
-          <div>
-            <span>No. of Districts</span>
-            <span>1</span>
-          </div>
-          <div>
-            <span>No. of Districts</span>
-            <span>1</span>
-          </div>
-          <div>
-            <span>No. of Districts</span>
-            <span>1</span>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
@@ -117,7 +122,7 @@ const IndiaMap = ({
   isStateMap = false,
   data,
   selectedState,
-  stateRef = null,
+  stateRef,
   handleMapClick,
 }) => {
   return (
@@ -140,7 +145,7 @@ const IndiaMap = ({
               : data.find((s) => s.id === geo.id);
             return (
               <Geography
-                ref={stateRef}
+                ref={isStateMap ? null : stateRef}
                 key={geo.rsmKey}
                 geography={geo}
                 stroke="#666"
@@ -150,7 +155,6 @@ const IndiaMap = ({
                 style={geographyStyle}
                 onClick={() => {
                   if (!isStateMap) handleMapClick(geo);
-                  else return;
                 }}
               />
             );

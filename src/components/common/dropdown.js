@@ -48,7 +48,11 @@ const Dropdown = ({ options, width, border = true, bold = true }) => {
           style={{ width: `${width}vw` }}
         >
           {options.map((option, i) => (
-            <div key={i} onClick={() => handleOptionSelect(option)}>
+            <div
+              key={i}
+              onClick={() => handleOptionSelect(option)}
+              className={selectedOption === option ? "selected" : ""}
+            >
               <div>{option}</div>
             </div>
           ))}

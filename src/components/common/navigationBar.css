@@ -1,0 +1,29 @@
+.topnav {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid black;
+}
+
+.topnav div {
+  cursor: pointer;
+  padding: 1rem 1rem;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-bottom: 3px solid transparent;
+  transition: all 200ms;
+}
+
+.topnav div:hover {
+  border-bottom: 3px solid #004b97;
+}
+
+.topnav div.active {
+  border-bottom: 3px solid #004b97;
+  font-weight: 600;
+  font-size: 1rem;
+}

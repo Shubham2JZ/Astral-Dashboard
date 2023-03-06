@@ -23,8 +23,8 @@ const Header = () => {
   };
 
   return (
-    <div className="dashboard-container-child dashboard-container-child-1">
-      <div id="header-left-container">
+    <div className="dashboard-container-child header-container">
+      <div className="header-left-container">
         <div className={`dark-bg ${isSideBarOpen ? "" : "hidden"}`}></div>
         <div>
           <button
@@ -40,8 +40,8 @@ const Header = () => {
         </div>
         <img src={astralLogo} />
       </div>
-      <DropDown options={topSelectOptions} width={15} border={false} />
-      <div id="header-right-container">
+      <DropDown options={topSelectOptions} width={20} border={false} />
+      <div className="header-right-container">
         <img src={settingsIcon} className="cursor-pointer" />
         <div className="profile-picture-icon cursor-pointer">Profile</div>
         <Logout />

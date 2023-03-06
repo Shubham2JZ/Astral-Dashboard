@@ -1,22 +1,21 @@
 .grid-box {
   background-color: white;
-  font-size: 0.8rem;
-  padding: 10px;
+  font-size: 1vw;
+  padding: 0.8vw;
   flex: 1;
   box-shadow: 0px 3px 4px 1px rgba(110, 134, 196, 0.466);
-  border-radius: 20px;
+  border-radius: 1vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   height: 80%;
+  word-wrap: normal;
 }
 
 .grid-box > * {
-  /* display: flex; */
   width: 100%;
-  /* flex-direction: row; */
-  /* justify-content: space-between; */
+  word-wrap: break-word;
 }
 
 .gridbox-main-text {
@@ -25,17 +24,40 @@
   gap: 0px;
 }
 
+.gridbox-growth {
+  display: flex;
+  align-items: center;
+  gap: 0.8vw;
+  font-size: 110%;
+}
+
+.gridbox-growth > div {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 0.2vw;
+}
+.gridbox-growth > div > img {
+  align-self: center;
+  height: 0.8vw;
+}
+
 .bigger-text {
-  font-size: 1.4rem;
+  font-size: 1.5vw;
   font-weight: 500;
   text-shadow: 0px 0px 1px black;
 }
 
 .red-text {
   color: red;
+  font-weight: 600;
+  /* font-size: 1vw; */
+  /* font-size: 130%; */
 }
 
 .green-text {
   color: rgb(0, 160, 0);
+  font-weight: 600;
+  /* font-size: 1vw; */
+  /* font-size: 130%; */
 }
-

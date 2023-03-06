@@ -1,10 +1,8 @@
-.dashboard-container-child-5 > div {
-    flex: auto;
-    border-radius: 20px;
-    height: 100%;
-  }
-
-#insight-container{
-    border: 1px solid gray;
-
-  }
+.map-box {
+  flex: 3;
+  height: 100%;
+}
+.insights-box {
+  flex: 7;
+  height: 100%;
+}

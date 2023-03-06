@@ -21,7 +21,7 @@ const Filters = () => {
   };
 
   return (
-    <div className="dashboard-container-child dashboard-container-child-2">
+    <div className="dashboard-container-child filter-container">
       <div>
         <div>
           <span>Select Time</span>
@@ -29,7 +29,7 @@ const Filters = () => {
         </div>
         <div>
           <span>Select UoM</span>
-          <DropDown options={valuesOptions} width={9} bold={false} />
+          <DropDown options={valuesOptions} width={10} bold={false} />
         </div>
       </div>
       <div>

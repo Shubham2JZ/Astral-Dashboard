@@ -3,7 +3,7 @@ import "./slider.css";
 
 const Slider = () => {
   return (
-    <div className="dashboard-container-child dashboard-container-child-3">
+    <div className="dashboard-container-child slider-container">
       Slider----------------------------------------------------------------------
     </div>
   );
